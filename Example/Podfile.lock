@@ -1,0 +1,16 @@
+PODS:
+  - HHOptionView (0.1.0)
+
+DEPENDENCIES:
+  - HHOptionView (from `../`)
+
+EXTERNAL SOURCES:
+  HHOptionView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HHOptionView: 0e9f0a16ec0eab1fa83e0c8a6ca25a04d5d8bb64
+
+PODFILE CHECKSUM: 08d41ff0a111dbff85311e54b7bb619cb97699e2
+
+COCOAPODS: 1.10.1

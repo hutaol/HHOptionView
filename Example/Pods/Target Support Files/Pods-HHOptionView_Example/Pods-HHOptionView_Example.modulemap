@@ -1,0 +1,6 @@
+framework module Pods_HHOptionView_Example {
+  umbrella header "Pods-HHOptionView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module HHOptionView {
+  umbrella header "HHOptionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
