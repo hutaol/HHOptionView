@@ -8,37 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		0704638E21EB468D0150EE3585322527 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2ED40BFBD71E1493331AA99C1D64ED85 /* HHOptionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F70410AF4A57450D8161E3FCC9C42 /* HHOptionView-dummy.m */; };
+		0BCC373324FAFD89A2219A455D1E24C0 /* HHOptionView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DD809851F34C736ED71986C4E25553 /* HHOptionView-dummy.m */; };
+		106DBC7EA5DCB33017B31DF62D427CE2 /* HHMultipleOptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C43BB1939DDBF90158C28318CF9B76 /* HHMultipleOptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E20D9AF1FF7E7BAAE4E3584A039BBBF /* HHOptionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B061E96BDC4499B3A7C2D11F6512700 /* HHOptionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F236FECE6D5DB39467B9FEE7E3A84D0 /* Pods-HHOptionView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 555BA4162863977BA35FD848A3ACF6B9 /* Pods-HHOptionView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54B327EFD6815B791493A7FB1EA27C7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		58237B3F47E57DD18BE61319D379013F /* Pods-HHOptionView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5830B288F5E0143070215C8B53437D8 /* Pods-HHOptionView_Example-dummy.m */; };
-		5D2381F86FB99A6C0CC82D70EC3A973B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		787CA7828ABDD57161109C65C0ADF393 /* HHOptionView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA000A8CB71CD8F63DFA41DBE1460C66 /* HHOptionView.bundle */; };
-		8D08E36E69E18AB25D10409B64122B89 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A1A627427859C1D9FFA2098C4DA274 /* icon_default@3x.png */; };
-		C436C6C7247E1A5C2439CF84C3BE4CB8 /* HHOptionView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 897F5D15300141C7D3DDF267853C47DB /* HHOptionView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CD3DAACC5F86CB3E86B3F995D142008E /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BE29A25E0E9DE22B92653B0F76A6C3B6 /* icon_default@2x.png */; };
-		D46355890AE642D331384BC99AAF9C38 /* HHOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79155E4E1D9B51E2847BCB7AF0D0ACAB /* HHOptionView.m */; };
+		6572DE9B45629EF7D222F237F152D3DA /* icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21202AA5E62FA343FACE785A59CF62D3 /* icon_selected@2x.png */; };
+		6670676D729F3239674D473A7C911913 /* HHOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92ABDA7B3C83BEBDA7A79C39DD72CB8 /* HHOptionView.m */; };
+		6D033FF2FC465A5EDF963E468CF7E04E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		716213B3A1428BC1844398252E793EFD /* HHMultipleOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C9BBBBA5B11A0CF95CFA9521B03473 /* HHMultipleOptionView.m */; };
+		75DE2FD78C5EB614AD8AB24FF7B09256 /* HHOptionView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA000A8CB71CD8F63DFA41DBE1460C66 /* HHOptionView.bundle */; };
+		850D93BD28821B9FF05E1213BD12E0C4 /* icon_default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D8937C863F60CA13490AAAAD04004C /* icon_default@3x.png */; };
+		8D13FB41B73E5767C9C3D97044BEB984 /* icon_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1C5199CB2761D94E5A68E2E7F40E7F5 /* icon_default@2x.png */; };
+		B19878C6FBCDA23039F141B36D6E82AE /* HHOptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = F15C142C96A1B544A8EBE29E2DC5EE47 /* HHOptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E09818187441049459C0CD07DB226DA0 /* Pods-HHOptionView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3E693F353F216BEA23FB8C886452105 /* Pods-HHOptionView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1A204CBFC81883A8A01940B9A8BEBC3 /* icon_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43C5D41C67EDB1C3CE44D3AD3D74A2D8 /* icon_unselected@2x.png */; };
 		F54820FB0B77770721A16D22BC8095DC /* Pods-HHOptionView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAE46EAD87677E163A1E97277218390 /* Pods-HHOptionView_Tests-dummy.m */; };
-		FEB2D7D441C2B9BAFFCE2762A896BD67 /* HHOptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC6F3D6264ADA4F613E8053D055EFE3 /* HHOptionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0580F07C6278FFA87D5164D9874B6B5C /* PBXContainerItemProxy */ = {
+		03709CA7985E6704250EA200DEACCE03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B93C5A1B0E37BFEDEDF78FBFB83F056C;
 			remoteInfo = "HHOptionView-HHOptionView";
 		};
-		68A136721F2BD597A5408EA10FC272F7 /* PBXContainerItemProxy */ = {
+		E0630E3D64024A81AAC5C1FAC8C2BF5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 060CE80C9B41E11039724F5C593DAFD2;
 			remoteInfo = HHOptionView;
 		};
-		9E6A0BB6E7526FCBE123352F61AC5358 /* PBXContainerItemProxy */ = {
+		EB2EF18415FF6590DD5FB0CA40415EF2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -48,44 +52,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07A1A627427859C1D9FFA2098C4DA274 /* icon_default@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_default@3x.png"; path = "HHOptionView/Assets/icon_default@3x.png"; sourceTree = "<group>"; };
+		04F1517E0E251E0341770C1D572FF4F2 /* HHOptionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHOptionView.release.xcconfig; sourceTree = "<group>"; };
+		06D8937C863F60CA13490AAAAD04004C /* icon_default@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_default@3x.png"; path = "HHOptionView/Assets/icon_default@3x.png"; sourceTree = "<group>"; };
 		0D45B1CE0207EF263DE2B9D3CA780260 /* Pods-HHOptionView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHOptionView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		112621D9ABB26AF9C9AC9FEBACF83E75 /* ResourceBundle-HHOptionView-HHOptionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-HHOptionView-HHOptionView-Info.plist"; sourceTree = "<group>"; };
 		122BECBE98A946AC372F685C312623BD /* Pods-HHOptionView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HHOptionView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		13CCE932D03FD8AE7C9AD4C0253FBB05 /* Pods-HHOptionView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HHOptionView_Example-Info.plist"; sourceTree = "<group>"; };
-		1750DD8CAD0C283B1A86A06FC479E371 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		193D935E06537C33E81C7614208DC897 /* Pods-HHOptionView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HHOptionView_Tests.modulemap"; sourceTree = "<group>"; };
+		1CC70D64DA76B58F89A17848F286DB5B /* HHOptionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HHOptionView-Info.plist"; sourceTree = "<group>"; };
+		21202AA5E62FA343FACE785A59CF62D3 /* icon_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_selected@2x.png"; path = "HHOptionView/Assets/icon_selected@2x.png"; sourceTree = "<group>"; };
+		22CC9CFA813F98150269643DFC25554E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		2D7D087757EF02FC02AB0E983C822EA3 /* Pods-HHOptionView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHOptionView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2DEF693C6433D968804BF37F8E49DB9E /* HHOptionView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HHOptionView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		31DD47F904A14BDA718520C7B3531C94 /* HHOptionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HHOptionView.framework; path = HHOptionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3435444F8018B387C2305FC45DC92B80 /* HHOptionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HHOptionView-prefix.pch"; sourceTree = "<group>"; };
 		3553C5B5CF4152609F7DA2CF48743D6B /* Pods-HHOptionView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HHOptionView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		38C43BB1939DDBF90158C28318CF9B76 /* HHMultipleOptionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHMultipleOptionView.h; path = HHOptionView/Classes/HHMultipleOptionView.h; sourceTree = "<group>"; };
+		43C5D41C67EDB1C3CE44D3AD3D74A2D8 /* icon_unselected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_unselected@2x.png"; path = "HHOptionView/Assets/icon_unselected@2x.png"; sourceTree = "<group>"; };
+		5328A40BEA6626EF6BD4F1AE0DBFF5D3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		54B07E797A0DC085D4A764BBF9662490 /* HHOptionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HHOptionView.modulemap; sourceTree = "<group>"; };
+		54DD809851F34C736ED71986C4E25553 /* HHOptionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HHOptionView-dummy.m"; sourceTree = "<group>"; };
 		555BA4162863977BA35FD848A3ACF6B9 /* Pods-HHOptionView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HHOptionView_Example-umbrella.h"; sourceTree = "<group>"; };
 		56A6499AFEB7941C0F24330A018275C5 /* Pods-HHOptionView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HHOptionView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5943C074A5DB8AA94DDEDAA8220F198C /* HHOptionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HHOptionView-Info.plist"; sourceTree = "<group>"; };
-		5FC6F3D6264ADA4F613E8053D055EFE3 /* HHOptionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHOptionView.h; path = HHOptionView/Classes/HHOptionView.h; sourceTree = "<group>"; };
-		66C00BCFA1E98D1BCBDF52D81DF7B69D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		6D733A1ACFE09BAAB15B3C4506D6B058 /* HHOptionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHOptionView.release.xcconfig; sourceTree = "<group>"; };
+		57C9BBBBA5B11A0CF95CFA9521B03473 /* HHMultipleOptionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHMultipleOptionView.m; path = HHOptionView/Classes/HHMultipleOptionView.m; sourceTree = "<group>"; };
+		5C6D57C4F5B5CCEB6FB6B6A0E5A22A2D /* HHOptionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HHOptionView-prefix.pch"; sourceTree = "<group>"; };
+		6B061E96BDC4499B3A7C2D11F6512700 /* HHOptionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HHOptionView-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		79155E4E1D9B51E2847BCB7AF0D0ACAB /* HHOptionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHOptionView.m; path = HHOptionView/Classes/HHOptionView.m; sourceTree = "<group>"; };
 		7A2BC4D397A520FE5244CC009F0FD257 /* Pods-HHOptionView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HHOptionView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		897F5D15300141C7D3DDF267853C47DB /* HHOptionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HHOptionView-umbrella.h"; sourceTree = "<group>"; };
 		8D82B30029792BE2C076E7E1D9C67324 /* Pods-HHOptionView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HHOptionView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		9428F78E72510DB2EB45C1DDAB29BBD5 /* HHOptionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHOptionView.debug.xcconfig; sourceTree = "<group>"; };
 		978924942ACAA5DDE212FBDB1C9FC0A8 /* Pods-HHOptionView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHOptionView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A96F70410AF4A57450D8161E3FCC9C42 /* HHOptionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HHOptionView-dummy.m"; sourceTree = "<group>"; };
+		A74EA8018CB85FF99D072F7EED5391FA /* HHOptionView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HHOptionView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B1C5199CB2761D94E5A68E2E7F40E7F5 /* icon_default@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_default@2x.png"; path = "HHOptionView/Assets/icon_default@2x.png"; sourceTree = "<group>"; };
 		B5830B288F5E0143070215C8B53437D8 /* Pods-HHOptionView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HHOptionView_Example-dummy.m"; sourceTree = "<group>"; };
-		BE29A25E0E9DE22B92653B0F76A6C3B6 /* icon_default@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_default@2x.png"; path = "HHOptionView/Assets/icon_default@2x.png"; sourceTree = "<group>"; };
+		B92ABDA7B3C83BEBDA7A79C39DD72CB8 /* HHOptionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHOptionView.m; path = HHOptionView/Classes/HHOptionView.m; sourceTree = "<group>"; };
 		CAAE46EAD87677E163A1E97277218390 /* Pods-HHOptionView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HHOptionView_Tests-dummy.m"; sourceTree = "<group>"; };
-		CC58525AC2C6DFFF0A659EFA3ED7C760 /* HHOptionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHOptionView.debug.xcconfig; sourceTree = "<group>"; };
 		D46BE1FEA54D7C01454EF418F68BF830 /* Pods-HHOptionView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HHOptionView_Example.modulemap"; sourceTree = "<group>"; };
+		D56D95071106963B185B57EDC0EC721A /* ResourceBundle-HHOptionView-HHOptionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-HHOptionView-HHOptionView-Info.plist"; sourceTree = "<group>"; };
 		DF8085CDCD602ADB166271CD71ACC723 /* Pods_HHOptionView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HHOptionView_Example.framework; path = "Pods-HHOptionView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9B78E87A150EAF7EBC4E015A003BEB /* Pods-HHOptionView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHOptionView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E3E693F353F216BEA23FB8C886452105 /* Pods-HHOptionView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HHOptionView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E5C91A39E4D01BD0DC1D04C45BB5237E /* Pods_HHOptionView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HHOptionView_Tests.framework; path = "Pods-HHOptionView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB96BFED9205666DCDF2911BB379F56A /* Pods-HHOptionView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HHOptionView_Tests-Info.plist"; sourceTree = "<group>"; };
+		F15C142C96A1B544A8EBE29E2DC5EE47 /* HHOptionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHOptionView.h; path = HHOptionView/Classes/HHOptionView.h; sourceTree = "<group>"; };
 		FA000A8CB71CD8F63DFA41DBE1460C66 /* HHOptionView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HHOptionView.bundle; path = "HHOptionView-HHOptionView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA8261D7FBF3A8DB623EAA20DF235A20 /* HHOptionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HHOptionView.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +105,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1EE7642237AF623CEF8EE3AB9C31885E /* Frameworks */ = {
+		33117EB0CE281BA14892AD63C49F1EA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D033FF2FC465A5EDF963E468CF7E04E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,11 +121,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		816589648518F7C5C2471B553FAE6976 /* Frameworks */ = {
+		E63B521E047988C4ECB1395313909D14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2381F86FB99A6C0CC82D70EC3A973B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,14 +142,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2EF4B3F52B0A129D0C30FBE8A49208CE /* Pod */ = {
+		1D1CDBCCCD041C98CAC5BDF44231FB7D /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				2DEF693C6433D968804BF37F8E49DB9E /* HHOptionView.podspec */,
-				66C00BCFA1E98D1BCBDF52D81DF7B69D /* LICENSE */,
-				1750DD8CAD0C283B1A86A06FC479E371 /* README.md */,
+				A74EA8018CB85FF99D072F7EED5391FA /* HHOptionView.podspec */,
+				22CC9CFA813F98150269643DFC25554E /* LICENSE */,
+				5328A40BEA6626EF6BD4F1AE0DBFF5D3 /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		52479ECA11C1D4E261A888C881713AA4 /* HHOptionView */ = {
+			isa = PBXGroup;
+			children = (
+				38C43BB1939DDBF90158C28318CF9B76 /* HHMultipleOptionView.h */,
+				57C9BBBBA5B11A0CF95CFA9521B03473 /* HHMultipleOptionView.m */,
+				F15C142C96A1B544A8EBE29E2DC5EE47 /* HHOptionView.h */,
+				B92ABDA7B3C83BEBDA7A79C39DD72CB8 /* HHOptionView.m */,
+				B1C5199CB2761D94E5A68E2E7F40E7F5 /* icon_default@2x.png */,
+				06D8937C863F60CA13490AAAAD04004C /* icon_default@3x.png */,
+				21202AA5E62FA343FACE785A59CF62D3 /* icon_selected@2x.png */,
+				43C5D41C67EDB1C3CE44D3AD3D74A2D8 /* icon_unselected@2x.png */,
+				1D1CDBCCCD041C98CAC5BDF44231FB7D /* Pod */,
+				FF45C26D521458EC8E528F3202D02AC3 /* Support Files */,
+			);
+			name = HHOptionView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		53692536E6AD2964D2F2ADAF7F6A3592 /* Pods-HHOptionView_Tests */ = {
@@ -168,6 +194,14 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		7FCF668C82A10C2B394A4219C88938F6 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52479ECA11C1D4E261A888C881713AA4 /* HHOptionView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		85BDA47BEC6A60204E6D91DD73DBFFD6 /* Pods-HHOptionView_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,35 +219,11 @@
 			path = "Target Support Files/Pods-HHOptionView_Example";
 			sourceTree = "<group>";
 		};
-		8E57B88E1BFF1A868949E1082ABAD32B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EAD2F5E62A52A322BDD7BA029519774C /* HHOptionView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		AE27F37EE288F0CFB9ADE8599A2F5DEB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FA8261D7FBF3A8DB623EAA20DF235A20 /* HHOptionView.modulemap */,
-				A96F70410AF4A57450D8161E3FCC9C42 /* HHOptionView-dummy.m */,
-				5943C074A5DB8AA94DDEDAA8220F198C /* HHOptionView-Info.plist */,
-				3435444F8018B387C2305FC45DC92B80 /* HHOptionView-prefix.pch */,
-				897F5D15300141C7D3DDF267853C47DB /* HHOptionView-umbrella.h */,
-				CC58525AC2C6DFFF0A659EFA3ED7C760 /* HHOptionView.debug.xcconfig */,
-				6D733A1ACFE09BAAB15B3C4506D6B058 /* HHOptionView.release.xcconfig */,
-				112621D9ABB26AF9C9AC9FEBACF83E75 /* ResourceBundle-HHOptionView-HHOptionView-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/HHOptionView";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				8E57B88E1BFF1A868949E1082ABAD32B /* Development Pods */,
+				7FCF668C82A10C2B394A4219C88938F6 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				1AD6A61C71AE621D0E886B994E1A8BD3 /* Products */,
 				D13B0207A76F6406FDB1596953240717 /* Targets Support Files */,
@@ -237,29 +247,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EAD2F5E62A52A322BDD7BA029519774C /* HHOptionView */ = {
+		FF45C26D521458EC8E528F3202D02AC3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5FC6F3D6264ADA4F613E8053D055EFE3 /* HHOptionView.h */,
-				79155E4E1D9B51E2847BCB7AF0D0ACAB /* HHOptionView.m */,
-				BE29A25E0E9DE22B92653B0F76A6C3B6 /* icon_default@2x.png */,
-				07A1A627427859C1D9FFA2098C4DA274 /* icon_default@3x.png */,
-				2EF4B3F52B0A129D0C30FBE8A49208CE /* Pod */,
-				AE27F37EE288F0CFB9ADE8599A2F5DEB /* Support Files */,
+				54B07E797A0DC085D4A764BBF9662490 /* HHOptionView.modulemap */,
+				54DD809851F34C736ED71986C4E25553 /* HHOptionView-dummy.m */,
+				1CC70D64DA76B58F89A17848F286DB5B /* HHOptionView-Info.plist */,
+				5C6D57C4F5B5CCEB6FB6B6A0E5A22A2D /* HHOptionView-prefix.pch */,
+				6B061E96BDC4499B3A7C2D11F6512700 /* HHOptionView-umbrella.h */,
+				9428F78E72510DB2EB45C1DDAB29BBD5 /* HHOptionView.debug.xcconfig */,
+				04F1517E0E251E0341770C1D572FF4F2 /* HHOptionView.release.xcconfig */,
+				D56D95071106963B185B57EDC0EC721A /* ResourceBundle-HHOptionView-HHOptionView-Info.plist */,
 			);
-			name = HHOptionView;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HHOptionView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0F7A424409675FE0C8FA85844B1DBA1D /* Headers */ = {
+		239165D55A37CFA2E6CE92581D86DB7A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C436C6C7247E1A5C2439CF84C3BE4CB8 /* HHOptionView-umbrella.h in Headers */,
-				FEB2D7D441C2B9BAFFCE2762A896BD67 /* HHOptionView.h in Headers */,
+				106DBC7EA5DCB33017B31DF62D427CE2 /* HHMultipleOptionView.h in Headers */,
+				1E20D9AF1FF7E7BAAE4E3584A039BBBF /* HHOptionView-umbrella.h in Headers */,
+				B19878C6FBCDA23039F141B36D6E82AE /* HHOptionView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,17 +297,17 @@
 /* Begin PBXNativeTarget section */
 		060CE80C9B41E11039724F5C593DAFD2 /* HHOptionView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EEAAC11DDA57BD9389F0276B28FBAEA /* Build configuration list for PBXNativeTarget "HHOptionView" */;
+			buildConfigurationList = 1EE109D1247589130DEC5FB331001A3D /* Build configuration list for PBXNativeTarget "HHOptionView" */;
 			buildPhases = (
-				0F7A424409675FE0C8FA85844B1DBA1D /* Headers */,
-				01D5E452C0E290C5A1FE118D93264479 /* Sources */,
-				816589648518F7C5C2471B553FAE6976 /* Frameworks */,
-				0645C3E223F3AD413B63070C5E87C6CE /* Resources */,
+				239165D55A37CFA2E6CE92581D86DB7A /* Headers */,
+				6E1B33688453B27013052AE8B0C589A8 /* Sources */,
+				33117EB0CE281BA14892AD63C49F1EA8 /* Frameworks */,
+				24A0550E90373A5C252F1C439303D6DD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				964144E05DC69922C47FB52F97B348C2 /* PBXTargetDependency */,
+				16879685E9B5B24332686CBD89DCD8F0 /* PBXTargetDependency */,
 			);
 			name = HHOptionView;
 			productName = HHOptionView;
@@ -313,7 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				FC3540B2C0598DAC1DCC004B440C0F71 /* PBXTargetDependency */,
+				EF685970C3015906BB11F742D0FB9F1D /* PBXTargetDependency */,
 			);
 			name = "Pods-HHOptionView_Tests";
 			productName = "Pods-HHOptionView_Tests";
@@ -332,7 +345,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				15BC7DA84058F0E30E9410BC9358A396 /* PBXTargetDependency */,
+				BE9F37C2637AEB7762678C5252A67DD0 /* PBXTargetDependency */,
 			);
 			name = "Pods-HHOptionView_Example";
 			productName = "Pods-HHOptionView_Example";
@@ -341,11 +354,11 @@
 		};
 		B93C5A1B0E37BFEDEDF78FBFB83F056C /* HHOptionView-HHOptionView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC127896BA2B46A0C3D8834244333CFF /* Build configuration list for PBXNativeTarget "HHOptionView-HHOptionView" */;
+			buildConfigurationList = 4AA81C1716A1D82EC1D437BAAEFB7600 /* Build configuration list for PBXNativeTarget "HHOptionView-HHOptionView" */;
 			buildPhases = (
-				907805862EE1A604BE82C0264FA4E944 /* Sources */,
-				1EE7642237AF623CEF8EE3AB9C31885E /* Frameworks */,
-				30A37F1BE3A1BCC377EF35C454C65255 /* Resources */,
+				60C9A1BAC7DB387DB8BB5A9A7199CFBE /* Sources */,
+				E63B521E047988C4ECB1395313909D14 /* Frameworks */,
+				1636E2A7921D000AE384F1B7E889CF5F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -387,20 +400,22 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0645C3E223F3AD413B63070C5E87C6CE /* Resources */ = {
+		1636E2A7921D000AE384F1B7E889CF5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				787CA7828ABDD57161109C65C0ADF393 /* HHOptionView.bundle in Resources */,
+				8D13FB41B73E5767C9C3D97044BEB984 /* icon_default@2x.png in Resources */,
+				850D93BD28821B9FF05E1213BD12E0C4 /* icon_default@3x.png in Resources */,
+				6572DE9B45629EF7D222F237F152D3DA /* icon_selected@2x.png in Resources */,
+				F1A204CBFC81883A8A01940B9A8BEBC3 /* icon_unselected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		30A37F1BE3A1BCC377EF35C454C65255 /* Resources */ = {
+		24A0550E90373A5C252F1C439303D6DD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD3DAACC5F86CB3E86B3F995D142008E /* icon_default@2x.png in Resources */,
-				8D08E36E69E18AB25D10409B64122B89 /* icon_default@3x.png in Resources */,
+				75DE2FD78C5EB614AD8AB24FF7B09256 /* HHOptionView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,19 +436,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		01D5E452C0E290C5A1FE118D93264479 /* Sources */ = {
+		60C9A1BAC7DB387DB8BB5A9A7199CFBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ED40BFBD71E1493331AA99C1D64ED85 /* HHOptionView-dummy.m in Sources */,
-				D46355890AE642D331384BC99AAF9C38 /* HHOptionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		907805862EE1A604BE82C0264FA4E944 /* Sources */ = {
+		6E1B33688453B27013052AE8B0C589A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716213B3A1428BC1844398252E793EFD /* HHMultipleOptionView.m in Sources */,
+				0BCC373324FAFD89A2219A455D1E24C0 /* HHOptionView-dummy.m in Sources */,
+				6670676D729F3239674D473A7C911913 /* HHOptionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,30 +472,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		15BC7DA84058F0E30E9410BC9358A396 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HHOptionView;
-			target = 060CE80C9B41E11039724F5C593DAFD2 /* HHOptionView */;
-			targetProxy = 68A136721F2BD597A5408EA10FC272F7 /* PBXContainerItemProxy */;
-		};
-		964144E05DC69922C47FB52F97B348C2 /* PBXTargetDependency */ = {
+		16879685E9B5B24332686CBD89DCD8F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "HHOptionView-HHOptionView";
 			target = B93C5A1B0E37BFEDEDF78FBFB83F056C /* HHOptionView-HHOptionView */;
-			targetProxy = 0580F07C6278FFA87D5164D9874B6B5C /* PBXContainerItemProxy */;
+			targetProxy = 03709CA7985E6704250EA200DEACCE03 /* PBXContainerItemProxy */;
 		};
-		FC3540B2C0598DAC1DCC004B440C0F71 /* PBXTargetDependency */ = {
+		BE9F37C2637AEB7762678C5252A67DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HHOptionView;
+			target = 060CE80C9B41E11039724F5C593DAFD2 /* HHOptionView */;
+			targetProxy = E0630E3D64024A81AAC5C1FAC8C2BF5B /* PBXContainerItemProxy */;
+		};
+		EF685970C3015906BB11F742D0FB9F1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-HHOptionView_Example";
 			target = 5EDDE79078AA7DDB5B7F9C55AF947A48 /* Pods-HHOptionView_Example */;
-			targetProxy = 9E6A0BB6E7526FCBE123352F61AC5358 /* PBXContainerItemProxy */;
+			targetProxy = EB2EF18415FF6590DD5FB0CA40415EF2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01A64EE8A36B42B59D741E14B6E05DBD /* Debug */ = {
+		1C8624621E468972400705A0BD73B544 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC58525AC2C6DFFF0A659EFA3ED7C760 /* HHOptionView.debug.xcconfig */;
+			baseConfigurationReference = 9428F78E72510DB2EB45C1DDAB29BBD5 /* HHOptionView.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -573,9 +589,9 @@
 			};
 			name = Debug;
 		};
-		79A1AE8255E21252E8440B5202DB9D26 /* Release */ = {
+		29EBCAB2DBC5993A7A47E6392BFDB30B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D733A1ACFE09BAAB15B3C4506D6B058 /* HHOptionView.release.xcconfig */;
+			baseConfigurationReference = 04F1517E0E251E0341770C1D572FF4F2 /* HHOptionView.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HHOptionView";
 				IBSC_MODULE = HHOptionView;
@@ -589,9 +605,9 @@
 			};
 			name = Release;
 		};
-		93E048DD26FB0F7DE22F642746A6795C /* Release */ = {
+		6446B6AAD75BCF5E6C9A5DC5ADB6DA81 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D733A1ACFE09BAAB15B3C4506D6B058 /* HHOptionView.release.xcconfig */;
+			baseConfigurationReference = 04F1517E0E251E0341770C1D572FF4F2 /* HHOptionView.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -653,9 +669,9 @@
 			};
 			name = Release;
 		};
-		C9586D6B2116A2478A53CD56013F72E3 /* Debug */ = {
+		C87567A60744AA259A7161FF2BF1DC84 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC58525AC2C6DFFF0A659EFA3ED7C760 /* HHOptionView.debug.xcconfig */;
+			baseConfigurationReference = 9428F78E72510DB2EB45C1DDAB29BBD5 /* HHOptionView.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/HHOptionView";
 				IBSC_MODULE = HHOptionView;
@@ -831,11 +847,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EEAAC11DDA57BD9389F0276B28FBAEA /* Build configuration list for PBXNativeTarget "HHOptionView" */ = {
+		1EE109D1247589130DEC5FB331001A3D /* Build configuration list for PBXNativeTarget "HHOptionView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				01A64EE8A36B42B59D741E14B6E05DBD /* Debug */,
-				93E048DD26FB0F7DE22F642746A6795C /* Release */,
+				1C8624621E468972400705A0BD73B544 /* Debug */,
+				6446B6AAD75BCF5E6C9A5DC5ADB6DA81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -845,6 +861,15 @@
 			buildConfigurations = (
 				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
 				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AA81C1716A1D82EC1D437BAAEFB7600 /* Build configuration list for PBXNativeTarget "HHOptionView-HHOptionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C87567A60744AA259A7161FF2BF1DC84 /* Debug */,
+				29EBCAB2DBC5993A7A47E6392BFDB30B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -863,15 +888,6 @@
 			buildConfigurations = (
 				FE5EE4EF004849F775996317CBDDFE7F /* Debug */,
 				D57F5399E973B9923DD01E1F87FC14FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC127896BA2B46A0C3D8834244333CFF /* Build configuration list for PBXNativeTarget "HHOptionView-HHOptionView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C9586D6B2116A2478A53CD56013F72E3 /* Debug */,
-				79A1AE8255E21252E8440B5202DB9D26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

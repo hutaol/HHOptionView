@@ -1,21 +1,37 @@
 //
-//  HHOptionView.m
+//  HHMultipleOptionView.m
 //  Pods
 //
-//  Created by Henry on 2021/4/29.
+//  Created by Henry on 2021/7/13.
 //
 
-#import "HHOptionView.h"
+#import "HHMultipleOptionView.h"
+
+@implementation HHMultipleOptionItem
+
+- (instancetype)initWithTitle:(NSString *)title type:(NSString *)type selected:(BOOL)selected {
+    self = [super init];
+    if (self) {
+        _title = title;
+        _type = type;
+        _selected = selected;
+    }
+    return self;
+}
+
+@end
 
 static CGFloat const kAnimationTime = 0.3;
 static CGFloat const kRowHeight = 44;
 static CGFloat const kSearchHeight = 44;
 static CGFloat const kSpaceHeight = 20;
 
-static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
+static NSString *kSelectAllType = @"All";
+
+static NSString *kCellIdentifier = @"HHMultipleOptionViewTableViewCellIdentifier";
 
 
-@interface HHOptionView () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface HHMultipleOptionView () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 /// 标题控件
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -41,10 +57,10 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
 
 @property (nonatomic, strong) NSMutableArray *dataList;
 
-
 @end
 
-@implementation HHOptionView
+
+@implementation HHMultipleOptionView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
@@ -62,9 +78,9 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray *)dataSource {
+- (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray<HHMultipleOptionItem *> *)dataSource {
     if (self = [super initWithFrame:frame]) {
-        self.dataSource = dataSource;
+        self.dataSource = dataSource.mutableCopy;
         [self configView];
     }
     return self;
@@ -74,7 +90,10 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     self.cornerRadius = 5;
     self.borderWidth = 1;
     self.borderColor = [UIColor colorWithRed:153.0/255 green:153.0/255 blue:153.0/255 alpha:1];
-
+    self.selectedImage = [self getResourceImage:@"icon_selected"];
+    self.unselectedImage = [self getResourceImage:@"icon_unselected"];
+    self.showSelectAllButton = NO;
+    
     [self addSubview:self.rightImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.maskBtn];
@@ -83,7 +102,6 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
     CGFloat imageWidth = 12;
     self.rightImageView.frame = CGRectMake(self.frame.size.width-imageWidth-10, (self.frame.size.height-imageWidth)/2, imageWidth, imageWidth);
     self.titleLabel.frame = CGRectMake(10, 0, self.frame.size.width-imageWidth-20, self.frame.size.height);
@@ -118,7 +136,7 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
                 superRect.origin.y += kSpaceHeight;
                 superRect.origin.y += [self hh_safeTop];
 
-                frame.size.height = contentHeight - self.titleLabel.frame.size.height - kSpaceHeight - [self hh_safeTop] ;
+                frame.size.height = contentHeight - self.titleLabel.frame.size.height - kSpaceHeight - [self hh_safeTop];
             } else {
                 superRect.origin.y -= increment;
             }
@@ -156,17 +174,17 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 
     self.dataList = [self.dataSource mutableCopy];
-    
+
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window addSubview:self.backgroundBtn];
     [window addSubview:self.tableView];
     
     [self updateDataAndHeight];
-    
+
     self.backgroundBtn.frame = [UIScreen mainScreen].bounds;
     
     self.tableView.frame = CGRectMake(self.tableViewFrame.origin.x, self.tableViewFrame.origin.y+(self.isDirectionUp?self.tableViewHeight:0), self.tableViewFrame.size.width, 0);
-
+    
     typeof(self) __weak weakSelf = self;
     [UIView animateWithDuration:kAnimationTime animations:^{
         weakSelf.rightImageView.transform = CGAffineTransformRotate(weakSelf.rightImageView.transform,self.isDirectionUp?-M_PI/2:M_PI/2);
@@ -177,9 +195,7 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
 }
 
 - (void)dismiss {
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
     typeof(self) __weak weakSelf = self;
     [UIView animateWithDuration:kAnimationTime animations:^{
         weakSelf.rightImageView.transform = CGAffineTransformIdentity;
@@ -188,11 +204,89 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
         [weakSelf.backgroundBtn removeFromSuperview];
         [weakSelf.tableView removeFromSuperview];
     }];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(multipleOptionView:dismiss:)]) {
+        [self.delegate multipleOptionView:self dismiss:[self getSelectedItems]];
+    }
+    
+    if (self.dismissBlock) {
+        self.dismissBlock(self, [self getSelectedItems]);
+    }
 }
 
-#pragma mark - Private
+#pragma mark - Public
 
+- (void)resetTitle {
+    self.title = [self getTitles];
+}
+
+- (NSString *)getSelectedTypes {
+    NSString *str = @"";
+    for (HHMultipleOptionItem *item in self.dataSource) {
+        if (item.selected && ![item.type isEqualToString:kSelectAllType]) {
+            if (str.length == 0) {
+                str = item.type;
+            } else {
+                NSString *itemStr = [@"," stringByAppendingString:item.type];
+                str = [str stringByAppendingString:itemStr];
+            }
+        }
+    }
+    return str;
+}
+
+- (NSArray<HHMultipleOptionItem *> *)getSelectedItems {
+    NSMutableArray *arr = [NSMutableArray array];
+    for (HHMultipleOptionItem *item in self.dataSource) {
+        if (item.selected && ![item.type isEqualToString:kSelectAllType]) {
+            [arr addObject:item];
+        }
+    }
+    return arr;
+}
+
+
+- (NSString *)getTitles {
+    NSString *str = @"";
+    for (HHMultipleOptionItem *item in self.dataSource) {
+        if (item.selected && ![item.type isEqualToString:kSelectAllType]) {
+            if (str.length == 0) {
+                str = item.title;
+            } else {
+                NSString *itemStr = [@"," stringByAppendingString:item.title];
+                str = [str stringByAppendingString:itemStr];
+            }
+        }
+    }
+    return str;
+}
+
+#pragma mark - Privte
+
+// 更新全选和高度
 - (void)updateDataAndHeight {
+    if (self.isSearch) {
+        return;
+    }
+    // 取第一个
+    if (self.dataSource.count > 0) {
+        HHMultipleOptionItem *item = self.dataSource[0];
+        if ([item.type isEqualToString:kSelectAllType]) {
+            if (!self.showSelectAllButton) {
+                [self.dataSource removeObjectAtIndex:0];
+            }
+        } else {
+            if (self.showSelectAllButton) {
+                HHMultipleOptionItem *allItem = [[HHMultipleOptionItem alloc] initWithTitle:@"全选" type:kSelectAllType selected:NO];
+                [self.dataSource insertObject:allItem atIndex:0];
+            }
+        }
+    }
+    
+    [self updateHeight];
+}
+
+- (void)updateHeight {
     if (self.isSearch) {
         return;
     }
@@ -218,7 +312,7 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     CGFloat mh = MAX(topHeight, bottomHeight);
     mh -= kSpaceHeight;
     self.tableViewHeight = MIN(hh, mh);
-    
+
     CGRect frame = [self convertRect:self.bounds toView:self.window];
     
     CGRect tableViewFrame;
@@ -257,7 +351,7 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     for (UIView *view = self; view; view = view.superview) {
         y += view.frame.origin.y;
         if ([view isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *scrollView = (UIScrollView*)view;
+            UIScrollView* scrollView = (UIScrollView*)view;
             y -= scrollView.contentOffset.y;
         }
     }
@@ -287,10 +381,10 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     self.isSearch = YES;
     
     NSMutableArray *copyArray = [NSMutableArray array];
-    for (NSString *string in self.dataList) {
-        NSRange titleResult = [string rangeOfString:searchText options:NSCaseInsensitiveSearch];
+    for (HHMultipleOptionItem *tempItem in self.dataList) {
+        NSRange titleResult = [tempItem.title rangeOfString:searchText options:NSCaseInsensitiveSearch];
         if (titleResult.length > 0) {
-            [copyArray addObject:string];
+            [copyArray addObject:tempItem];
         }
     }
     
@@ -307,43 +401,126 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    cell.textLabel.text = self.dataSource[indexPath.row];
-    cell.textLabel.font = [UIFont systemFontOfSize:17];
+    HHMultipleOptionItem *item = self.dataSource[indexPath.row];
+    cell.textLabel.text = item.title;
+
+    cell.imageView.image = item.selected ? self.selectedImage : self.unselectedImage;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.title = self.dataSource[indexPath.row];
-    self.selectedIndex = indexPath.row;
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    HHMultipleOptionItem *item = self.dataSource[indexPath.row];
     
     if (self.isSearch) {
+        item.selected = YES;
+        cell.imageView.image = self.selectedImage;
+
         self.dataSource = self.dataList;
         [self.tableView reloadData];
         self.isSearch = NO;
         self.searchBar.text = @"";
         [self.searchBar resignFirstResponder];
-        for (int i = 0; i < self.dataSource.count; i ++) {
-            if ([self.dataSource[i] isEqualToString:self.title]) {
-                self.selectedIndex = i;
-                break;
+        [self resetTitle];
+        
+        if (self.showSelectAllButton) {
+            // 所有选中 为全选
+            BOOL isAllSelected = YES;
+            for (HHMultipleOptionItem *tt in self.dataSource) {
+                if (![tt.type isEqualToString:kSelectAllType]) {
+                    if (tt.selected == NO) {
+                        isAllSelected = NO;
+                        break;
+                    }
+                }
+            }
+            UITableViewCell *firstCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            HHMultipleOptionItem *firstItem = self.dataSource[0];
+
+            if (isAllSelected) {
+                firstCell.imageView.image = self.selectedImage;
+                firstItem.selected = YES;
+            } else {
+                firstCell.imageView.image = self.unselectedImage;
+                firstItem.selected = NO;
+            }
+        }
+        
+        return;
+    }
+    
+    if (item.selected) {
+        item.selected = NO;
+        cell.imageView.image = self.unselectedImage;
+        
+        // 全选按钮 取消
+        if ([item.type isEqualToString:kSelectAllType]) {
+            for (HHMultipleOptionItem *tt in self.dataSource) {
+                tt.selected = NO;
+            }
+            [self.tableView reloadData];
+        } else {
+            // 一个取消 全选为取消
+            if (self.showSelectAllButton) {
+                UITableViewCell *firstCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                firstCell.imageView.image = self.unselectedImage;
+                HHMultipleOptionItem *firstItem = self.dataSource[0];
+                firstItem.selected = NO;
+            }
+        }
+    } else {
+        item.selected = YES;
+        cell.imageView.image = self.selectedImage;
+            
+        // 全选按钮 取消
+        if ([item.type isEqualToString:kSelectAllType]) {
+            for (HHMultipleOptionItem *tt in self.dataSource) {
+                tt.selected = YES;
+            }
+            [self.tableView reloadData];
+        } else {
+            if (self.showSelectAllButton) {
+                // 所有选中 为全选
+                BOOL isAllSelected = YES;
+                for (HHMultipleOptionItem *tt in self.dataSource) {
+                    if (![tt.type isEqualToString:kSelectAllType]) {
+                        if (tt.selected == NO) {
+                            isAllSelected = NO;
+                            break;
+                        }
+                    }
+                }
+                UITableViewCell *firstCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+                HHMultipleOptionItem *firstItem = self.dataSource[0];
+
+                if (isAllSelected) {
+                    firstCell.imageView.image = self.selectedImage;
+                    firstItem.selected = YES;
+                } else {
+                    firstCell.imageView.image = self.unselectedImage;
+                    firstItem.selected = NO;
+                }
             }
         }
     }
-
-    [self dismiss];
-    if ([self.delegate respondsToSelector:@selector(optionView:selectedIndex:)]) {
-        [self.delegate optionView:self selectedIndex:indexPath.row];
+    
+    // TODO 多选 更新 title
+    [self resetTitle];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(multipleOptionView:selectedItem:)]) {
+        [self.delegate multipleOptionView:self selectedItem:item];
     }
     if (self.selectedBlock) {
-        self.selectedBlock(self, indexPath.row);
+        self.selectedBlock(self, item);
     }
 }
 
 #pragma mark - Setters
 
-- (void)setRowHeight:(CGFloat)rowHeight {
-    _rowHeight = rowHeight;
-    self.tableView.rowHeight = rowHeight;
+- (void)setDataSource:(NSMutableArray<HHMultipleOptionItem *> *)dataSource {
+    _dataSource = dataSource;
 }
 
 - (void)setTitle:(NSString *)title {
@@ -351,27 +528,14 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
     self.titleLabel.text = title;
 }
 
-- (void)setDataSource:(NSArray *)dataSource {
-    _dataSource = dataSource;
-}
-
-- (void)setSelectedIndex:(NSInteger)selectedIndex {
-    _selectedIndex = selectedIndex;
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
-    if (self.dataSource.count > selectedIndex && selectedIndex > 0) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex-1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
-    }
-
+- (void)setTitleColor:(UIColor *)titleColor {
+    _titleColor = titleColor;
+    self.titleLabel.textColor = titleColor;
 }
 
 - (void)setTitleFontSize:(CGFloat)titleFontSize {
     _titleFontSize = titleFontSize;
     self.titleLabel.font = [UIFont systemFontOfSize:titleFontSize];
-}
-
-- (void)setTitleColor:(UIColor *)titleColor {
-    _titleColor = titleColor;
-    self.titleLabel.textColor = titleColor;
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
@@ -396,6 +560,25 @@ static NSString *kCellIdentifier = @"HHOptionViewTableViewCellIdentifier";
 
 - (CGFloat)borderWidth {
     return self.layer.borderWidth;
+}
+
+- (NSMutableArray *)selectedIndexArray {
+    if (!_selectedIndexArray) {
+        _selectedIndexArray = [NSMutableArray array];
+    }
+    return _selectedIndexArray;
+}
+
+- (void)setRowHeight:(CGFloat)rowHeight {
+    _rowHeight = rowHeight;
+    self.tableView.rowHeight = rowHeight;
+}
+
+- (void)setShowSelectAllButton:(BOOL)showSelectAllButton {
+    if (_showSelectAllButton == showSelectAllButton) {
+        return;
+    }
+    _showSelectAllButton = showSelectAllButton;
 }
 
 - (void)setShowSearchBar:(BOOL)showSearchBar {

@@ -22,7 +22,7 @@ pod 'HHOptionView'
 
 ## Author
 
-1325049637@qq.com, 1325049637@qq.com
+1325049637@qq.com
 
 ## License
 

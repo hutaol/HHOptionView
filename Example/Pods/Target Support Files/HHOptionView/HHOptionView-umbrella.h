@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "HHMultipleOptionView.h"
 #import "HHOptionView.h"
 
 FOUNDATION_EXPORT double HHOptionViewVersionNumber;

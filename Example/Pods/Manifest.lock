@@ -1,5 +1,5 @@
 PODS:
-  - HHOptionView (0.1.0)
+  - HHOptionView (0.1.1)
 
 DEPENDENCIES:
   - HHOptionView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HHOptionView: 0e9f0a16ec0eab1fa83e0c8a6ca25a04d5d8bb64
+  HHOptionView: 4a6514d50691cfe785c1dc2ec18f5faa248a43cb
 
 PODFILE CHECKSUM: 08d41ff0a111dbff85311e54b7bb619cb97699e2
 

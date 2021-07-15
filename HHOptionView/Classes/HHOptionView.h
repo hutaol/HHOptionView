@@ -43,9 +43,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) IBInspectable CGFloat borderWidth;
 
 /// 行高度
-@property (nonatomic, assign) CGFloat rowHeigt;
+@property (nonatomic, assign) CGFloat rowHeight;
 
 @property (nonatomic, strong) NSArray <NSString *> *dataSource;
+
+/// 展示搜索，默认NO
+@property (nonatomic, assign) BOOL showSearchBar;
 
 @property (nonatomic, assign) NSInteger selectedIndex;
 
